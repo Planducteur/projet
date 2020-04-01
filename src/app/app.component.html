@@ -1,0 +1,22 @@
+﻿<!-- nav -->
+<nav class="navbar navbar-expand navbar-dark bg-dark" *ngIf="currentUser">
+    <div class="navbar-nav">
+<!-- le menu du haut -->
+        <a class="nav-item nav-link" routerLink="/">Accueil</a>
+        <a class="nav-item nav-link" (click)="logout()">Déconnexion</a>
+	<a class="nav-item nav-link" (click)="aRDV()">Ajouter RDV</a>
+    </div>
+</nav>
+
+<!-- les paramètres de la barre du haut  -->
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <div class="row">
+ <!-- largeur et mouvement horizontale  -->
+            <div class="col-sm-6 offset-sm-3">
+                <alert></alert>
+                <router-outlet></router-outlet>
+            </div>
+        </div>
+    </div>
+</div>

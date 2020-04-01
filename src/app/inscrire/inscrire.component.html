@@ -1,0 +1,40 @@
+﻿<h2>S'inscrire</h2>
+<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+        <label for="lastName">Nom</label>
+        <input type="text" formControlName="lastName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" />
+        <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
+            <div *ngIf="f.lastName.errors.required">Le nom est obligatoire</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="firstName">Prenom</label>
+        <input type="text" formControlName="firstName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
+        <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
+            <div *ngIf="f.firstName.errors.required">Le prenom est obligatoire</div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="username">Identifiant</label>
+        <input type="text" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
+        <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+            <div *ngIf="f.username.errors.required">Le identifiant est obligatoire</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="password">Mot de passe</label>
+        <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+        <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+            <div *ngIf="f.password.errors.required">Password is required</div>
+            <div *ngIf="f.password.errors.minlength">Le mot de passe doit être au moins de 6 caractères</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <button [disabled]="loading" class="btn btn-dark">
+            <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+            Crée
+        </button>
+        <a routerLink="/identifier" class="btn btn-danger">Anuler</a>
+    </div>
+</form>

@@ -1,0 +1,18 @@
+
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th class="table-active" scope="col">titre</th>
+        <th class="table-active" scope="col">RDV</th>
+        <th class="table-active" scope="col">date</th>
+        <th class="table-danger" scope="col">x</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let rdv of rdvs | rdvpipe">
+        <td>{{rdv.titre}}</td>
+        <td>{{rdv.rdvname}}</td>
+        <td>{{rdv.date}}</td>
+        <td><a (click)="deleteRDV(rdv.id)" class="text-danger">Supprimer</a> </td>
+      </tr>
+</table>

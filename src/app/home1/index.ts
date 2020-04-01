@@ -1,0 +1,1 @@
+﻿export * from './home1.component';
